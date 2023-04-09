@@ -4,18 +4,35 @@ import Card from "../UI/Card/card";
 import FlexRow from "../UI/Card/FlexRow";
 import Container from "../UI/Card/Container";
 import Button from "../UI/button/Button";
+import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { cartActions } from "../../Redux/cartSlice";
 
 const Coursedetails = ({ myFood }) => {
+  const foodCart = useSelector((state) => state.cart.foodCart);
+  console.log("foodCart__", foodCart);
+  const Dispatch = useDispatch();
+
+  const addToCartHandler = (id, title, url) => {
+    Dispatch(cartActions.addToCart({ id: id, title, url: url, quant: 1 }));
+  };
+
+  const removeToCartHandler = (id) => {
+    Dispatch(cartActions.removeToCart({ id: id }));
+  };
   return (
     <React.Fragment>
       {myFood &&
-        myFood.map((item, i) => {
+        myFood.map((item) => {
           const imageUrl = `https://spoonacular.com/recipeImages/${item.image}`;
+
+          const foodCartitems =
+            foodCart && foodCart.find((e) => e.id === item.id);
 
           return (
             <Card className="coursecCard">
               <Container className="imgContainer">
-                <img src={imageUrl} />
+                <img src={imageUrl} alt="pic" />
               </Container>
               <Container className="titlecontainer">
                 <h2>{item.title}</h2>
@@ -35,19 +52,26 @@ const Coursedetails = ({ myFood }) => {
                       borderTopLeftRadius: "25px",
                       borderBottomLeftRadius: "25px",
                     }}
+                    onClick={removeToCartHandler.bind(this, item.id)}
                   >
                     -
                   </Button>
                   <p style={{ fontSize: "20px" }} className="p1">
-                    10
+                    {foodCartitems ? foodCartitems.quant : 0}
                   </p>
                   <Button
                     style={{
                       borderTopRightRadius: "25px",
                       borderBottomRightRadius: "25px",
                     }}
+                    onClick={addToCartHandler.bind(
+                      this,
+                      item.id,
+                      item.title,
+                      imageUrl
+                    )}
                   >
-                    +{" "}
+                    +
                   </Button>
                 </FlexRow>
               </Container>
