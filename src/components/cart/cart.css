@@ -1,0 +1,8 @@
+.carticonContainer {
+  background-color: black;
+  padding: 7px 15px;
+  border-radius: 3px;
+}
+.carticonContainer:hover {
+  cursor: pointer;
+}
