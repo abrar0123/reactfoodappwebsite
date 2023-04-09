@@ -7,10 +7,17 @@ import FlexRow from "../UI/Card/FlexRow";
 import SearchBar from "./searchBar";
 import Carticon from "../cart/carticon";
 import { useSelector } from "react-redux";
+import CartModel from "../CartModel/CartModel";
 
 const CourseSection = () => {
   const [myFood, setmyFood] = useState("");
-  const cartitems = useSelector((state) => state.cart.cartItems);
+  const userfoodCart = useSelector((state) => state.cart.foodCart);
+
+  let cartitems = 0;
+  for (let items of userfoodCart) {
+    cartitems += items.quant;
+  }
+  const showModel = useSelector((state) => state.cart.showModel);
 
   useEffect(() => {
     const myFoodData = async () => {
@@ -36,7 +43,7 @@ const CourseSection = () => {
         <Carticon cartitems={cartitems} />
         <SearchBar />
       </FlexRow>
-
+      <Container>{showModel && <CartModel />}</Container>
       <Container className="coursecontainer">
         <Coursedetails myFood={myFood} />
       </Container>

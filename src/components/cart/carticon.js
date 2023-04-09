@@ -1,15 +1,21 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Container from "../UI/Card/Container";
 import { IoIosCart } from "react-icons/io";
 import "./cart.css";
 import FlexRow from "../UI/Card/FlexRow";
+import { useDispatch, useSelector } from "react-redux";
+import { cartActions } from "../../Redux/cartSlice";
 
-export default function carticon({ cartitems }) {
-  let pp;
+export default function Carticon({ cartitems }) {
+
+  const Dispatch = useDispatch();
+
+  useEffect(() => {}, []);
 
   const clickHandler = () => {
-    console.log("click handler", pp);
+    Dispatch(cartActions.cartModel({ data: true }));
   };
+
   return (
     <Container className="carticonContainer">
       <FlexRow className="flexPrimary">

@@ -10,23 +10,26 @@ import { cartActions } from "../../Redux/cartSlice";
 
 const Coursedetails = ({ myFood }) => {
   const foodCart = useSelector((state) => state.cart.foodCart);
+
   console.log("foodCart__", foodCart);
   const Dispatch = useDispatch();
 
-  const addToCartHandler = (id, title, url) => {
-    Dispatch(cartActions.addToCart({ id: id, title, url: url, quant: 1 }));
+  const addToCartHandler = (id, title, url, price) => {
+    Dispatch(
+      cartActions.addToCart({ id: id, title, url: url, quant: 1, price: price })
+    );
   };
 
   const removeToCartHandler = (id) => {
     Dispatch(cartActions.removeToCart({ id: id }));
   };
-  
+
   return (
     <React.Fragment>
       {myFood &&
         myFood.map((item) => {
           const imageUrl = `https://spoonacular.com/recipeImages/${item.image}`;
-
+          const price = item.servings * 4;
           const foodCartitems =
             foodCart && foodCart.find((e) => e.id === item.id);
 
@@ -43,7 +46,7 @@ const Coursedetails = ({ myFood }) => {
                   <p>Ready : {item.readyInMinutes}min</p>
                 </Container>
                 <Container className="titlecontainer">
-                  <p>Price: ${item.servings * 4}</p>
+                  <p>Price: ${price}</p>
                 </Container>
               </FlexRow>
               <Container className="titlecontainer">
@@ -69,7 +72,8 @@ const Coursedetails = ({ myFood }) => {
                       this,
                       item.id,
                       item.title,
-                      imageUrl
+                      imageUrl,
+                      price
                     )}
                   >
                     +
