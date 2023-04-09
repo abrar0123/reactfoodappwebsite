@@ -8,16 +8,19 @@ import SearchBar from "./searchBar";
 import Carticon from "../cart/carticon";
 import { useSelector } from "react-redux";
 import CartModel from "../CartModel/CartModel";
+import { useDispatch } from "react-redux";
+import { cartActions } from "../../Redux/cartSlice";
 
 const CourseSection = () => {
   const [myFood, setmyFood] = useState("");
   const userfoodCart = useSelector((state) => state.cart.foodCart);
-
+  const Dispatch = useDispatch();
   let cartitems = 0;
   for (let items of userfoodCart) {
     cartitems += items.quant;
   }
   const showModel = useSelector((state) => state.cart.showModel);
+  const searchedProducts = useSelector((state) => state.cart.searchedProducts);
 
   useEffect(() => {
     const myFoodData = async () => {
@@ -35,6 +38,7 @@ const CourseSection = () => {
     };
     myFoodData();
   }, []);
+  myFood.length > 0 && Dispatch(cartActions.apidata(myFood));
 
   return (
     <Card className="section">
@@ -45,7 +49,7 @@ const CourseSection = () => {
       </FlexRow>
       <Container>{showModel && <CartModel />}</Container>
       <Container className="coursecontainer">
-        <Coursedetails myFood={myFood} />
+        <Coursedetails myFood={myFood} searchedProducts={searchedProducts} />
       </Container>
 
       <Container className="coursecontainer"></Container>

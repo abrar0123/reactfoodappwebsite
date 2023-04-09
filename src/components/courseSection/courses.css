@@ -107,7 +107,7 @@
 }
 /* search bar */
 .courseSearch {
-  width: 250px;
+  width: 300px;
   height: 38px;
   display: flex;
   align-items: center;
@@ -130,5 +130,5 @@
   outline: none;
 }
 .courseSearch input[type="text"]::placeholder {
-  color: rgb(209, 200, 200);
+  color: rgb(222, 215, 215);
 }
