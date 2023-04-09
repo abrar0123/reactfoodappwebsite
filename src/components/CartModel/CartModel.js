@@ -35,7 +35,7 @@ const CartModel = () => {
   };
 
   const orderHandler = () => {
-    // props.orderHandler();
+    //display
   };
 
   return (
@@ -49,8 +49,16 @@ const CartModel = () => {
               <FlexRow className={styles.mainCartFlex} key={i}>
                 <Container className={styles.subCartFlex}>
                   <FlexRow className={styles.sub2CartFlex}>
-                    <Container>
-                      <p style={{ width: "200px" }}>{e.title}</p>
+                    <Container style={{ marginTop: "7px" }}>
+                      <p
+                        style={{
+                          width: "230px",
+                          whiteSpace: "nowrap",
+                          overflow: "hidden",
+                        }}
+                      >
+                        {e.title}
+                      </p>
                     </Container>
                     <Container className={styles.primarycard}>
                       ${e.price} *
@@ -68,7 +76,7 @@ const CartModel = () => {
                   </Container>
                   <div>
                     <button
-                      style={{ marginTop: "15px" }}
+                      style={{ marginTop: "10px" }}
                       onClick={() => getIDDelete(e.id)}
                     >
                       delete
