@@ -20,6 +20,7 @@ const Coursedetails = ({ myFood }) => {
   const removeToCartHandler = (id) => {
     Dispatch(cartActions.removeToCart({ id: id }));
   };
+  
   return (
     <React.Fragment>
       {myFood &&

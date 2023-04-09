@@ -10,7 +10,6 @@ import { useSelector } from "react-redux";
 
 const CourseSection = () => {
   const [myFood, setmyFood] = useState("");
-
   const cartitems = useSelector((state) => state.cart.cartItems);
 
   useEffect(() => {
@@ -33,8 +32,8 @@ const CourseSection = () => {
   return (
     <Card className="section">
       <FlexRow className="primaryflexContainer">
-        <h1>Restaurants {cartitems}</h1>
-        <Carticon />
+        <h1>Restaurants </h1>
+        <Carticon cartitems={cartitems} />
         <SearchBar />
       </FlexRow>
 

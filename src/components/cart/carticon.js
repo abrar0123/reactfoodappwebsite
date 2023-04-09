@@ -2,8 +2,9 @@ import React from "react";
 import Container from "../UI/Card/Container";
 import { IoIosCart } from "react-icons/io";
 import "./cart.css";
+import FlexRow from "../UI/Card/FlexRow";
 
-export default function carticon() {
+export default function carticon({ cartitems }) {
   let pp;
 
   const clickHandler = () => {
@@ -11,13 +12,15 @@ export default function carticon() {
   };
   return (
     <Container className="carticonContainer">
-      <IoIosCart
-        color="white"
-        size={30}
-        style={{ paddingRight: "15px" }}
-        onClick={clickHandler}
-      />
-      <h2>{pp}</h2>
+      <FlexRow className="flexPrimary">
+        <IoIosCart
+          color="white"
+          size={30}
+          style={{ paddingRight: "15px" }}
+          onClick={clickHandler}
+        />
+        <p>{cartitems ? cartitems : 0}</p>
+      </FlexRow>
     </Container>
   );
 }
