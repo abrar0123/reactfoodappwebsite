@@ -46,10 +46,10 @@ header {
   padding: 5px 10px;
 }
 .headercontainer nav ul li a:hover {
-  background-color: rgb(197, 210, 222);
+  /* background-color: rgb(197, 210, 222); */
   border-radius: 15px;
-  color: brown;
-  transition: all 1s ease;
+  color: orangered;
+  transition: all 0.3s ease;
 }
 
 .headercontainer nav ul li a:active {
