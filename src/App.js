@@ -2,51 +2,28 @@ import React, { useState, useEffect } from "react";
 // import Mainpage from "./sections/Mainpage/Mainpage";
 import Card from "./components/UI/Card/card";
 import Mainpage from "./sections/Mainpage/mainpage";
+import Tailwind from "./pages/Tailwind";
 
 function App() {
-  // const [simple, setsimple] = useState([]);
-  // const books = [
-  //   {
-  //     id: 1,
-  //     title: "The Catcher in the Rye",
-  //     author: "J.D. Salinger",
-  //     genre: "Fiction",
-  //   },
-  //   {
-  //     id: 2,
-  //     title: "To Kill a Mockingbird",
-  //     author: "Harper Lee",
-  //     genre: "Fiction",
-  //   },
-  //   { id: 3, title: "1984", author: "George Orwell", genre: "Dystopian" },
-  //   {
-  //     id: 4,
-  //     title: "The Great Gatsby",
-  //     author: "F. Scott Fitzgerald",
-  //     genre: "Fiction",
-  //   },
-  // ];
-
-  // useEffect(() => {
-  //   const sss = () => {
-  //     const ss = books.filter((e) => {
-  //       return e.genre === "Fiction";
-  //     });
-  //     setsimple(ss);
-  //     console.log("sss", ss);
-  //   };
-
-  //   sss();
-  // }, []);
   return (
-    <Card
-      style={{
-        background:
-          "linear-gradient(to right, rgb(54, 54, 241), rgb(207, 50, 243))",
-      }}
-    >
-      <Mainpage />
-    </Card>
+    // <Card
+    //   style={{
+    //     background:
+    //       "linear-gradient(to right, rgb(54, 54, 241), rgb(207, 50, 243))",
+    //   }}
+    // >
+    //   {/* <Mainpage /> */}
+    // <Tailwind />
+    <div className="container mx-auto">
+      <h1 className="text-3xl font-bold underline">Hello, Tailwind CSS 1!</h1>
+      <h1 className="text-2xl font-bold text-center text-blue-500">
+        Hello, Tailwind CSS 1!
+      </h1>
+      <button className="bg-blue-500 hover:bg-blue-700 text-red font-bold py-2 px-4 rounded">
+        Click Me
+      </button>
+    </div>
+    // </Card>
   );
 }
 
