@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Button from "../../components/Button";
 
 export default function Features() {
   return (
@@ -166,6 +167,7 @@ export default function Features() {
               </a>
             </div>
           </div>
+          <Button />
           <div class="text-center">
             <h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
               Data to enrich your online business
