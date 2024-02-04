@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function Features() {
   return (
@@ -10,7 +11,7 @@ export default function Features() {
         >
           <div class="flex lg:flex-1">
             <a href="#" class="-m-1.5 p-1.5">
-              <span class="sr-only">Your Company</span>
+              <span class="sr-only">abc company</span>
               <img
                 class="h-8 w-auto"
                 src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
@@ -41,9 +42,19 @@ export default function Features() {
             </button>
           </div>
           <div class="hidden lg:flex lg:gap-x-12">
-            <a href="#" class="text-sm font-semibold leading-6 text-gray-900">
-              Product
-            </a>
+            <Link
+              to={"Home"}
+              class="text-sm font-semibold leading-6 text-gray-900"
+            >
+              Home
+            </Link>
+            <Link
+              to={"Features2"}
+              class="text-sm font-semibold leading-6 text-gray-900"
+            >
+              Features2
+            </Link>
+
             <a href="#" class="text-sm font-semibold leading-6 text-gray-900">
               Features
             </a>
