@@ -5,7 +5,7 @@ import Feature2 from "./pages/Features/Feature2";
 import { Routes, Route } from "react-router-dom";
 import Faqs from "./pages/Faqs/Faqs";
 import NavBar from "./components/NavBar";
-import { SideBar } from "./components";
+import { Product, SideBar } from "./components";
 import HeaderCmp from "./components/HeaderCmp";
 
 function App() {
@@ -13,7 +13,7 @@ function App() {
     <Routes>
       <Route path="/" Component={HeaderCmp} />
       <Route path="/Home" Component={Home} />
-
+      <Route path="/Product" Component={Product} />
       <Route path="/Features2" Component={Feature2} />
       <Route path="/Faqs" Component={Faqs} />
 
