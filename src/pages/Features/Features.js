@@ -4,7 +4,7 @@ import Button from "../../components/Button";
 
 export default function Features() {
   return (
-    <div class="bg-white">
+    <div class="bg-red-100">
       <header class="absolute inset-x-0 top-0 z-50">
         <nav
           class="flex items-center justify-between p-6 lg:px-8"
@@ -169,10 +169,14 @@ export default function Features() {
             </div>
           </div>
           <Button />
-          <div class="text-center">
+          <div class=" saturate-200 backdrop-brightness-150	hover:translate-x-2  transition delay-700 hover:contrast-200 text-center pb-3 mt-2  rounded-xl shadow-md shadow-cyan-500/50 opacity-90 hover:cursor-pointer	">
             <h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
-              Data to enrich your online business
+              online business
             </h1>
+            <img
+              class="w-80 h-80 self-center transition duration-1000 "
+              src="https://e1.pxfuel.com/desktop-wallpaper/27/607/desktop-wallpaper-zara-noor-abbas-recites-wohi-khuda-hai-zara-noor-abbas.jpg"
+            />
             <p class="mt-6 text-lg leading-8 text-gray-600">
               Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui
               lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat

@@ -13,7 +13,7 @@ function App() {
     <Routes>
       <Route path="/" Component={HeaderCmp} />
       <Route path="/Home" Component={Home} />
-      <Route path="/Product" Component={Product} />
+      {/* <Route path="/Product" Component={Product} /> */}
       <Route path="/Features2" Component={Feature2} />
       <Route path="/Faqs" Component={Faqs} />
 
