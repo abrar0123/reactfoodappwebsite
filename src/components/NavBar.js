@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function NavBar() {
   return (
@@ -752,12 +753,12 @@ export default function NavBar() {
             </a>
           </li>
           <li class="block border-b dark:border-gray-700">
-            <a
-              href="#"
+            <Link
+              to={"/GridDesign"}
               class="block py-3 px-4 text-gray-900 lg:py-0 dark:text-white lg:hover:underline lg:px-0"
             >
-              Messages
-            </a>
+              GridDesign
+            </Link>
           </li>
           <li class="block border-b dark:border-gray-700">
             <a

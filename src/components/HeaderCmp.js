@@ -10,7 +10,7 @@ import { Features, Home } from "../pages";
 const HeaderCmp = () => {
   return (
     <React.Fragment>
-      <NavBar />
+      {/* <NavBar /> */}
       <Features />
       {/* <Setting/> */}
       {/* <Pricing /> */}

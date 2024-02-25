@@ -1,0 +1,85 @@
+.layoutGridContainer {
+  margin-top: 100px;
+  width: 850px;
+  background-color: rgb(182, 210, 235);
+  margin: 0px auto;
+  display: grid;
+  /* grid-template-columns: 2fr 1fr 1fr; */
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  grid-template-rows: 80px 50px repeat(1, minmax(50px, min-content)) 200px 50px;
+  /* grid-template-rows: [h-start] 80px[h-end m-start] 50px[m-end] repeat(1, 50px) 200px 50px; */
+  grid-auto-rows: 100px;
+  /* grid-auto-flow: column; */
+  /* grid-auto-columns: 40px; */
+  /* but in this way we just change row  */
+}
+
+.layoutGridContainer .item1 {
+  background-color: rgb(58, 174, 174);
+  /* grid-column: 1 / span 3; */
+  grid-column: 1 / -1;
+}
+
+.layoutGridContainer .item2 {
+  background-color: red;
+  grid-column: 1 / span 3;
+}
+.layoutGridContainer .item3 {
+  background-color: green;
+}
+.layoutGridContainer .item4 {
+  background-color: orange;
+}
+.layoutGridContainer .item5 {
+  background-color: rgb(151, 151, 250);
+  grid-row: 3/5;
+  grid-column: 3/4;
+}
+.layoutGridContainer .item6 {
+  background-color: rgb(42, 186, 186);
+  grid-column: 1 / span 2;
+  /* grid-row: 4/6; */
+}
+.layoutGridContainer .item7 {
+  background-color: black;
+  color: white;
+  grid-column: 1 / span 3;
+}
+.layoutGridContainer .item8 {
+  background-color: rgb(145, 31, 50);
+}
+.layoutGridContainer .item9 {
+  background-color: rgb(192, 232, 255);
+}
+
+/*  itemsgrid */
+
+.itemsgrid {
+  width: 70%;
+  margin: 0 auto;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-rows: repeat(2, 150px);
+  display: grid;
+  grid-auto-rows: 100px;
+  gap: 15px;
+  /* background-color: rgb(245, 60, 60); */
+}
+.itemsgrid .items1 {
+  background-color: aquamarine;
+}
+.itemsgrid .items2 {
+  background-color: rgb(234, 255, 127);
+}
+.itemsgrid .items3 {
+  background-color: aquamarine;
+}
+.itemsgrid .items4 {
+  background-color: rgb(255, 155, 127);
+}
+.itemsgrid .items5 {
+  background-color: aquamarine;
+}
+.itemsgrid .items5 {
+  background-color: rgb(127, 142, 255);
+}

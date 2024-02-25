@@ -7,6 +7,7 @@ import Faqs from "./pages/Faqs/Faqs";
 import NavBar from "./components/NavBar";
 import { Product, SideBar } from "./components";
 import HeaderCmp from "./components/HeaderCmp";
+import GridDesign from "./pages/grid/GridDesign";
 
 function App() {
   return (
@@ -15,8 +16,7 @@ function App() {
       <Route path="/Home" Component={Home} />
       {/* <Route path="/Product" Component={Product} /> */}
       <Route path="/Features2" Component={Feature2} />
-      <Route path="/Faqs" Component={Faqs} />
-
+      <Route path="/GridDesign" Component={GridDesign} />
       <Route path="*" Component={NoPage} />
     </Routes>
   );
