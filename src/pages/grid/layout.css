@@ -5,9 +5,10 @@
   margin: 0px auto;
   display: grid;
   /* grid-template-columns: 2fr 1fr 1fr; */
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  grid-template-rows: 80px 50px repeat(1, minmax(50px, min-content)) 200px 50px;
+  /* width : define width 3 equally width in 1 row  */
+  grid-template-columns: 200px repeat(3, 1fr);
+
+  grid-template-rows: 90px 70px repeat(1, minmax(50px, min-content)) 200px 50px;
   /* grid-template-rows: [h-start] 80px[h-end m-start] 50px[m-end] repeat(1, 50px) 200px 50px; */
   grid-auto-rows: 100px;
   /* grid-auto-flow: column; */
@@ -17,7 +18,7 @@
 
 .layoutGridContainer .item1 {
   background-color: rgb(58, 174, 174);
-  /* grid-column: 1 / span 3; */
+  /* start from 1st column and end until end column  / span 3; */
   grid-column: 1 / -1;
 }
 
